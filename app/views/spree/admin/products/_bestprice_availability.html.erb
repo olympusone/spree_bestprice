@@ -1,0 +1,19 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h6 class="mb-0"><%= Spree.t('admin.integrations.bestprice.title') %></h6>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= f.label :bestprice_availability, Spree.t('admin.products.bestprice_availability') %>
+      <%= f.select :bestprice_availability,
+            options_for_select(
+              [[Spree.t('admin.products.bestprice_availability_default'), '']] +
+              Spree::Integrations::BestPrice::OUT_OF_STOCK_AVAILABILITY_OPTIONS,
+              product.bestprice_availability.to_s
+            ),
+            {},
+            { class: 'custom-select' } %>
+      <small class="form-text text-muted"><%= Spree.t('admin.products.bestprice_availability_hint') %></small>
+    </div>
+  </div>
+</div>

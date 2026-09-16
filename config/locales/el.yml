@@ -1,0 +1,15 @@
+---
+el:
+  spree:
+    admin:
+      integrations:
+        bestprice:
+          title: BestPrice
+          description: Το BestPrice είναι εργαλείο για καταχωρίσεις προϊόντων στο BestPrice
+          physical_pickup: Το κατάστημα διαθέτει φυσικό σημείο παραλαβής
+          preferred_default_availability: Προεπιλεγμένη διαθεσιμότητα (εκτός αποθέματος)
+          preferred_default_availability_none: "Χωρίς προεπιλογή (τα εκτός αποθέματος εξαιρούνται)"
+      products:
+        bestprice_availability: Διαθεσιμότητα BestPrice (override)
+        bestprice_availability_default: Χρήση προεπιλογής καταστήματος
+        bestprice_availability_hint: Αναφέρετε πάντα αυτή τη διαθεσιμότητα για το προϊόν, ανεξαρτήτως αποθέματος.

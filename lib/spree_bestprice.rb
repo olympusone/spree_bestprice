@@ -1,0 +1,5 @@
+require 'spree_core'
+require 'spree_extension'
+require 'spree_bestprice/engine'
+require 'spree_bestprice/version'
+require 'spree_bestprice/configuration'

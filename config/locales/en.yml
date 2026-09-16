@@ -1,0 +1,15 @@
+---
+en:
+  spree:
+    admin:
+      integrations:
+        bestprice:
+          title: BestPrice
+          description: BestPrice is a channel integration for product listings on BestPrice
+          physical_pickup: Store has a physical pickup location
+          preferred_default_availability: Default availability (out of stock)
+          preferred_default_availability_none: "No default (out-of-stock products excluded)"
+      products:
+        bestprice_availability: BestPrice availability override
+        bestprice_availability_default: Use store default
+        bestprice_availability_hint: Always report this availability status for this product, regardless of stock level.

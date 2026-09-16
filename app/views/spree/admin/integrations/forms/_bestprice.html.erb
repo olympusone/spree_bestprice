@@ -1,0 +1,19 @@
+<div class="col-12 col-md-6 p-0">
+  <div class="card mb-4">
+    <div class="card-body">
+      <p>
+        <%= Spree.t('admin.integrations.bestprice.description') %>
+      </p>
+
+      <%= preference_field(@integration, form, 'physical_pickup', i18n_scope: 'admin.integrations.bestprice') %>
+
+      <div class="form-group">
+        <%= form.label :preferred_default_availability, Spree.t('admin.integrations.bestprice.preferred_default_availability') %>
+        <%= form.select :preferred_default_availability,
+              options_for_select(Spree::Integrations::BestPrice::OUT_OF_STOCK_AVAILABILITY_OPTIONS, @integration.preferred_default_availability),
+              { include_blank: Spree.t('admin.integrations.bestprice.preferred_default_availability_none') },
+              { class: 'custom-select', data: { action: 'auto-submit#submit' } } %>
+      </div>
+    </div>
+  </div>
+</div>
