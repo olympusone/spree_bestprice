@@ -76,7 +76,7 @@ xml.store do
               xml.cdata! spree_image_url(entry_images.first, width: 500, height: 500) if entry_images.first
             end
 
-            entry_images[1..].each do |image|
+            entry_images.drop(1).each do |image|
               xml.tag! "additional_image" do
                 xml.cdata! spree_image_url(image, width: 500, height: 500)
               end
