@@ -2,12 +2,12 @@ xml.instruct! :xml, version: "1.0", encoding: "UTF-8"
 
 bestprice_integration = store_integration('bestprice')
 default_in_stock_availability = if bestprice_integration&.preferred_physical_pickup
-  Spree::Integrations::BestPrice::IN_STOCK_AVAILABILITY[:pickup]
+  Spree::Integrations::Bestprice::IN_STOCK_AVAILABILITY[:pickup]
 else
-  Spree::Integrations::BestPrice::IN_STOCK_AVAILABILITY[:delivery]
+  Spree::Integrations::Bestprice::IN_STOCK_AVAILABILITY[:delivery]
 end
 default_out_of_stock_availability = bestprice_integration&.preferred_default_availability.presence ||
-  Spree::Integrations::BestPrice::OUT_OF_STOCK_AVAILABILITY_OPTIONS.last
+  Spree::Integrations::Bestprice::OUT_OF_STOCK_AVAILABILITY_OPTIONS.last
 
 resolve_availability = lambda do |item_in_stock, override|
   override.presence || (item_in_stock ? default_in_stock_availability : default_out_of_stock_availability)
@@ -33,9 +33,15 @@ xml.store do
             .group_by { |v| v.option_values.find { |ov| ov.option_type_id == color_option_type.id } }
             .reject { |color_value, _| color_value.nil? }
             .map do |color_value, variants|
+              title = if product.name.downcase.include?(color_value.presentation.downcase)
+                product.name
+              else
+                "#{product.name} - #{color_value.presentation}"
+              end
+
               {
                 id: "#{product.id}-#{color_value.id}",
-                title: "#{product.name} - #{color_value.presentation}",
+                title: title,
                 variants: variants
               }
             end

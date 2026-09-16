@@ -1,6 +1,6 @@
 module Spree
   module Integrations
-    class BestPrice < Spree::Integration
+    class Bestprice < Spree::Integration
       IN_STOCK_AVAILABILITY = {
         pickup: 'Σε απόθεμα',
         delivery: 'Παράδοση σε 1-3 ημέρες'

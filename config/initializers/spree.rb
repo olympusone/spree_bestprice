@@ -1,5 +1,5 @@
 Rails.application.config.after_initialize do
-  Spree.integrations << Spree::Integrations::BestPrice
+  Spree.integrations << Spree::Integrations::Bestprice
 
   Spree::PermittedAttributes.product_attributes.push(:bestprice_availability)
 

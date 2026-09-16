@@ -10,7 +10,7 @@
       <div class="form-group">
         <%= form.label :preferred_default_availability, Spree.t('admin.integrations.bestprice.preferred_default_availability') %>
         <%= form.select :preferred_default_availability,
-              options_for_select(Spree::Integrations::BestPrice::OUT_OF_STOCK_AVAILABILITY_OPTIONS, @integration.preferred_default_availability),
+              options_for_select(Spree::Integrations::Bestprice::OUT_OF_STOCK_AVAILABILITY_OPTIONS, @integration.preferred_default_availability),
               { include_blank: Spree.t('admin.integrations.bestprice.preferred_default_availability_none') },
               { class: 'custom-select', data: { action: 'auto-submit#submit' } } %>
       </div>

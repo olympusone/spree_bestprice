@@ -8,7 +8,7 @@
       <%= f.select :bestprice_availability,
             options_for_select(
               [[Spree.t('admin.products.bestprice_availability_default'), '']] +
-              Spree::Integrations::BestPrice::OUT_OF_STOCK_AVAILABILITY_OPTIONS,
+              Spree::Integrations::Bestprice::OUT_OF_STOCK_AVAILABILITY_OPTIONS,
               product.bestprice_availability.to_s
             ),
             {},

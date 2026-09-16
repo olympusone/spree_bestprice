@@ -1,5 +1,5 @@
 module Spree
-  class BestPriceController < StoreController
+  class BestpriceController < StoreController
     include BaseHelper
     include StorefrontHelper
 
